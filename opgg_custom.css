@@ -1,3 +1,4 @@
+/* santo comment: format all css */
         @font-face {
             font-family: 'SF';
             src: url('SF.otf') format('opentype');
@@ -76,7 +77,7 @@
             text-shadow: 2px 2px 10px #000000;
             border-color: purple;
         }
-
+        /* santo comment: use english */
         .nombre_search {
             gap: 0px;
             display: flex;
@@ -145,7 +146,7 @@
             margin-bottom: 150px;
 
         }
-
+        /* santo comment: search-summoner, not searchSUMMONER */
         .searchSUMMONER input {
             display: flex;
             border: none;
@@ -166,6 +167,7 @@
             border-color: green;
         }
 
+        /* santo comment: all-profile */
         .ALLprofile {
             background-color: #14141a;
             border-bottom-right-radius: 10px;
@@ -173,6 +175,7 @@
             box-shadow: 2px 10px 50px #000000;
         }
 
+        /* santo comment: matches-box, check for other lines that don't follow the convention (https://www.geeksforgeeks.org/css/css-naming-conventions/) */
         .matchesBOX {
             display: flex;
             justify-content: flex-start;

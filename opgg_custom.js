@@ -1,22 +1,30 @@
+/* santo comment: can't put api keys directly on code, also not in client-facing html */
+/* santo comment: use backend for this */
 let api_key = "RGAPI-cd92b353-a525-4149-be93-2276bbe1c2b3";
 
+/* santo comment: javascript naming convention, don't use absolute path, use relative path */
+/* santo comment: are you using this */
 let IMG_FOLDER = "C:\Users\Administrator\img"
 let cache = null;
 
+/* santo comment: javascript uses camel case, so this is correct, nice! */
+/* santo comment: add comments explaining what is this function doing, what is the argument, etc */
 async function getPUUID(IGN) {
     const api_url = `https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${IGN}?api_key=${api_key}`
     const resp = await fetch(api_url);
     const data = await resp.json();
+    /* santo comment: try to handle potential errors here, what if RIOT api fails and returns a null? */
     return data.puuid;
 }
 async function getIconLevels(puuid) {
+    /* santo comment: research if you have to use const or let when working with variables in js */
     const profile_URl = `https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${puuid}?api_key=${api_key}`
     // console.log(profile_URl)
     const resp = await fetch(profile_URl);
     const data = await resp.json();
     // console.log(data);
     const icon_url = `<img id="profileIcon" class="profile-icon" alt="Icono de perfil" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${data.profileIconId}.jpg">`;
-
+    /* santo comment: this function combines logic for the frontend and for the backend, keep this in mind */
     $(".combination-icons").append(icon_url);
     return { profileIconId: data.profileIconId, summonerLevel: data.summonerLevel };
 }
@@ -47,6 +55,7 @@ async function getMatches(puuid) {
         const spell1 = await getSpellIcon(player.summoner1);
         const spell2 = await getSpellIcon(player.summoner2);
         console.log(player.summoner2)
+        /* santo comment: backend (gets the data from  the RIOT api or database, and sends the data to the client/frontend), frontend (receives the data from the backend and creates the HTML structures and components showing the match results) */
         matches += `<div class="matchesBOX" style="background:${color}">
             <!-- champ image -->
             <div class="matchTextInfo">
@@ -94,6 +103,8 @@ async function getMatches(puuid) {
     $("#matchesID").html(matches);
 
 }
+
+/* santo comment: formatTime, change name or add comment explaining what is this doing */
 async function getTime(gameDuration) {
     let seconds = gameDuration % 60;
     let minutes = gameDuration - seconds
@@ -106,6 +117,7 @@ async function getTime(gameDuration) {
     return total
 }
 
+/* santo comment: fix name convention for the function name */
 async function get_all_important_data_match(puuid, matchID) {
     let match_url = `https://europe.api.riotgames.com/lol/match/v5/matches/${matchID}?api_key=${api_key}`;
 
@@ -116,6 +128,12 @@ async function get_all_important_data_match(puuid, matchID) {
     let items = [];
     let gameDuration = await getTime(data.info.gameDuration);
 
+    /* santo comment: currentUserIndex, change name or add comment what is this doing */
+    /* santo comment: check if this would work 
+    let player = data.info.participants[index]
+    let resultGame = player.win
+    let damageDeal = player.totalDamageDealtToChampion
+    ... */
     const index = data.info.participants.findIndex(p => p.puuid === puuid);
     let resultGame = data.info.participants[index].win;
     let damageDeal = data.info.participants[index].totalDamageDealtToChampion;
@@ -138,6 +156,7 @@ async function get_all_important_data_match(puuid, matchID) {
 
     // let runeIcons = await getRunesIcons(primary_runes, secondary_runes);
 
+    /* santo comment: this is a pedazo of json, try to structure this in some way */
     return { champion, resultGame, damageDeal, kda, kills, deaths, assists, lane, items, primary_runes, secondary_runes, secodary_rune_tree, gameDuration, summoner1, summoner2 };
 }
 
@@ -148,12 +167,13 @@ async function getRank(puuid) {
     let rank = data[0].tier;
     // console.log(data)
     // console.log(rank)
-
+    /* santo comment: tiers/ folder isn't accessible from the repo, fix this */
     let rankURL = `<img id="rankIMG" class="rankIMG" alt="Icono de perfil" src="tiers/${rank}.png">`;
     $(".combination-icons").append(rankURL);
 }
 
 async function getSpellIcon(spellId) {
+    /* santo comment: this is a true constant, you should keep it outside of a function */
     const SPELLS = {
         1: "summoner_boost",
         3: "summoner_exhaust",
@@ -214,6 +234,8 @@ async function loadAllRunesMap() {
 }
 
 // CREAR PERFIL
+/* santo comment: use english */
+/* santo comment: this is a frontend logic, keep that in mind when doing the migration */
 async function crearPerfil(puuid, forzar = false) {
 
     // const params = new URLSearchParams(window.location.search);

@@ -22,6 +22,7 @@
                     </div>
                     <div class="nombre_search">
                         <span class="nombre" id="hastagname"><span class="hastag" id="name"></span></span>
+                        <!-- santo comment: don't use spanish/catalan variables/functions, use english, don't hardcode anything-->
                         <input type="button" class="search" onclick="crearPerfil('santo/002', true)" value="Update now">
                     </div>
                 </h1>
@@ -34,10 +35,12 @@
     </div>
     <div class="matches" id="matchesID">
 
+        <!-- santo comment: matches-box -->
         <div class="matchesBOX">
             <!-- champ image -->
             <img class="champion" />
             <!-- KDA CREATED -->
+             <!-- santo comment: use kda, not KDA, avoid mayus in everything, except when it's the standard -->
             <div class="KDA">
                 <div class="score">
                 </div>
@@ -45,6 +48,7 @@
             <!-- runes -->
             <div class="runes_items">
                 <div class="runes">
+                    <!-- santo comment: IMO first-rune, second-rune -->
                     <div id="rune1">
 
 
@@ -53,6 +57,7 @@
 
                     </div>
                 </div>
+                <!-- santo comment: use all minus, items -->
                 <div class="Items">
 
                 </div>
@@ -61,11 +66,14 @@
         </div>
     </div>
 
+    <!-- santo comment: Delete non-informative comments -->
+
     <!-- https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Rumble.png -->
 
     <!-- Scripts -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- santo comment: Dead code, remove tu-script.js -->
     <script src="tu-script.js"></script>
     <script src="opgg_custom.js"></script>
 
