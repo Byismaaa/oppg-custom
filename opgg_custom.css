@@ -1,0 +1,393 @@
+        @font-face {
+            font-family: 'SF';
+            src: url('SF.otf') format('opentype');
+            font-family: 'SFregular';
+            src: url('SFregular.otf') format('opentype');
+
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(180deg, #2e2e50, #000000);
+        }
+
+        * {
+            border: 0px solid;
+            box-sizing: border-box;
+        }
+
+
+        /* HEADER CSS */
+        .headerText {
+            /* text-align: center; */
+            margin-bottom: 0;
+            display: flex;
+            height: 5.8%;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            padding-left: 30px;
+            padding-right: 30%;
+            font-family: 'SF', sans-serif;
+            background-color: #14141a;
+            /* #191927 */
+
+        }
+
+        .headerText:hover {
+            cursor: pointer;
+        }
+
+
+        /* AFTER HEADER CSS */
+        .profile_banner {
+            display: flex;
+            width: 600px;
+            margin-left: 600px;
+            margin-top: 0px !important;
+            padding: 0px !important;
+            align-items: center;
+            border-color: yellow;
+            height: 100px;
+        }
+
+        .nombre {
+            color: white;
+            font-size: 15px;
+            padding-top: 0%;
+            margin-top: 0px !important;
+            font-family: 'SF', sans-serif;
+            text-shadow: 2px 2px 10px #000000;
+            margin-bottom: 1px;
+            text-align: top;
+            margin-left: 7px;
+            border-color: orange;
+
+        }
+
+        .hastag {
+            color: lightgrey;
+            font-size: 15px;
+            padding-left: 0px;
+            padding-top: 15px;
+            padding-right: 2px;
+            font-family: 'SF', sans-serif;
+            text-shadow: 2px 2px 10px #000000;
+            border-color: purple;
+        }
+
+        .nombre_search {
+            gap: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 2px 2px;
+            border-color: aquamarine;
+        }
+
+        .search {
+            display: flex;
+            text-align: center;
+            border-radius: 5px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            width: 85px;
+            background-color: #0d0422;
+            color: white;
+            margin-left: 6px;
+
+
+            font-family: 'SFregular', sans-serif;
+            font-size: 12px;
+            font-weight: 100;
+            box-shadow: 2px 2px 10px #000000;
+            transition: all 0.7s ease;
+            cursor: pointer;
+            border-color: green;
+        }
+
+        .search:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        .profile-icon {
+            height: 68px;
+            width: 68px;
+            border-radius: 48px;
+            display: inline-flex;
+            align-items: center;
+
+            position: relative;
+            top: 89px;
+            left: 65px;
+            transition: transform 0.2s ease;
+            will-change: transform;
+            backface-visibility: hidden;
+
+
+        }
+
+        .profile-icon:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+
+        .IGN {
+
+            display: inline-block;
+            position: relative;
+            align-items: center;
+            line-height: 2;
+            border-color: red;
+            margin-bottom: 150px;
+
+        }
+
+        .searchSUMMONER input {
+            display: flex;
+            border: none;
+            padding: 3px;
+            border-radius: 60px;
+            padding-left: 10px;
+            padding-right: 100%;
+            margin: 2px;
+            background-color: rgb(82, 80, 80);
+            color: white;
+            font-family: 'SFregular', sans-serif;
+            box-shadow: 2px 2px 10px #000000;
+
+
+        }
+
+        .searchSUMMONER input:focus {
+            border-color: green;
+        }
+
+        .ALLprofile {
+            background-color: #14141a;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            box-shadow: 2px 10px 50px #000000;
+        }
+
+        .matchesBOX {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            align-items: center;
+            width: 500px;
+            height: 70px;
+            border: 1px black !important;
+            border-radius: 10px;
+            padding: 20px;
+            color: black;
+            margin-top: 10px;
+            /* background-color: rgb(2, 0, 43); */
+            box-shadow: 2px 10px 50px rgba(0, 0, 0, 0.5) !important;
+            gap: 15px;
+        }
+
+        .matches {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .champion {
+
+            height: 50px;
+            width: 50px;
+            border-radius: 2px;
+            margin-right: 10px;
+            transition: transform 0.2s ease;
+
+        }
+
+        .rune-1:hover,
+        .rune-2:hover,
+        .champion:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+
+
+        /* TODO EL KDA */
+        .KDA {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'SFregular', sans-serif;
+            font-weight: bold;
+            gap: 6px;
+            margin-left: 0px;
+            margin-top: 20px;
+            width: 70px;
+
+        }
+
+        /* 10/4/5 */
+        .score {
+            font-family: 'SFregular', sans-serif;
+            font-weight: bold;
+            display: flex;
+            gap: 4px;
+            color: white;
+
+        }
+
+        /* TEXTO KDA */
+        .Rounded-kda {
+            font-family: 'SFregular', sans-serif;
+            font-weight: bold;
+            margin-top: 2px;
+            font-size: 10px;
+            display: flex;
+            justify-content: flex-start;
+            padding: 3px;
+            border-radius: 5px;
+            background-color: #14141a59;
+
+        }
+
+        .goodKDA {
+            color: white !important;
+            background-color: #14141abe !important;
+        }
+
+        .perfectKDA {
+            color: rgb(255, 230, 0) !important;
+            background-color: #14141a96 !important;
+        }
+
+        .badKDA {
+            color: rgb(255, 0, 64) !important;
+        }
+
+
+        .runes {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 3px;
+            align-items: center;
+
+
+        }
+
+        .rune-1:hover,
+        .rune-2:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        .rune-1 {
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            transform: scale(1.1);
+
+        }
+
+        .rune-2 {
+
+            height: 25px;
+            width: 25px;
+            padding: 2px;
+            border-radius: 3px;
+            border-radius: 4px;
+            transition: transform 0.2s ease;
+        }
+
+        .rankIMG {
+            margin: 0px;
+            display: inline-flex;
+            justify-content: start;
+
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+
+        }
+
+        .rankINFO {
+            display: inline-block;
+            justify-content: start;
+            margin-left: -400px;
+
+        }
+
+        .combination-icons {
+            position: relative;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            margin-bottom: 25px;
+            margin-left: -180;
+        }
+
+        .runes_items {
+            background-color: rgba(19, 22, 25) !important;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: row;
+            box-shadow: 2px 10px 50px rgba(0, 0, 0, 1) !important;
+        }
+
+        .Items {
+            margin-left: 5px;
+            border-radius: 4px;
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+            padding: 6px;
+            gap: 5px;
+
+        }
+
+        .itemSolo {
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            transition: transform 0.2s ease;
+        }
+
+        .summonerSpells {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-left: 5px;
+            margin-right: 8px;
+            vertical-align: center;
+            justify-content: center;
+        }
+
+        .spell {
+
+            width: 22px !important;
+            height: 22px !important;
+            border-radius: 6px !important;
+            transition: transform 0.2s ease;
+        }
+
+        .spell:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        .itemSolo:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
